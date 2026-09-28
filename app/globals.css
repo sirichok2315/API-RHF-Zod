@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ตั้งค่าพื้นฐานสำหรับหน้าเว็บ */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f172a; /* พื้นหลังสีเข้ม (Dark mode) */
+  color: #f8fafc; /* สีข้อความหลัก */
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* จัดรูปแบบฟอร์มและการค้นหา */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input, select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* ปุ่มกดต่าง ๆ */
+button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+button:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* จัดรูปแบบตารางสินค้า */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+th {
+  background-color: #334155;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #262f45;
+}
+
+/* ข้อความแจ้งเตือน Error */
+span[role="alert"] {
+  color: #f87171;
+  font-size: 12px;
+  margin-top: -8px;
 }
